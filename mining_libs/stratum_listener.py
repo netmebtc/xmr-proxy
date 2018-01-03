@@ -63,11 +63,11 @@ class MiningSubscription(Subscription):
              
     @classmethod
     def on_template_all(cls, job_id, blob, target):
-      for subs in cls.subscribers:
-         try:
-            subscr = cls.subscribers[subs]
-            subscr.emit_single({'job_id':job_id, 'blob':blob, 'target':target})
-         except Exception:
+        for subs in cls.subscribers:
+            try:
+                subscr = cls.subscribers[subs]
+                subscr.emit_single({'job_id':job_id, 'blob':blob, 'target':target})
+        except Exception:
             pass
         
     def _finish_after_subscribe(self, result):
