@@ -4,7 +4,7 @@ STRATUM_HOST = "0.0.0.0"
 STRATUM_PORT = 8080
 
 # Coin address where money goes. If you mine direct to the exchange, you MUST specify payment_id together with wallet of exchange.
-WALLET = '466KoUjvbFE2SduDyiZQUb5QviKo6qnbyDGDB46C6UcTDi5XmVtSXuRYJDmgd6mhYPU92xJHsTQyrSjLbsxdzKQc3Z1PZQM'
+WALLET = '42JzYcuSB8tUThjTEc7a89bbYWtZXa7EwhPWcfUV1WTYEPYDMNACSjNJZPaRimBh1GcxPKxeG9Na5GAc7xygPUNXEFSpLhS'
 # Only if you mine direct to the exchange
 PAYMENT_ID = ''
 
@@ -19,15 +19,15 @@ MONITORING = True
 MONITORING_EMAIL = 'mail@example.com'
 
 # Main pool
-POOL_HOST = 'xmr-eu.dwarfpool.com'
-POOL_PORT = 8050
+POOL_HOST = 'pool.minexmr.com'
+POOL_PORT = 7777
 
 # Failover pool
 POOL_FAILOVER_ENABLE = False
-POOL_HOST_FAILOVER = 'xmr-usa.dwarfpool.com'
-POOL_PORT_FAILOVER = 8050
+POOL_HOST_FAILOVER = 'pool.minexmr.com'
+POOL_PORT_FAILOVER = 7777
 
 # ERROR, INFO, DEBUG
-LOGLEVEL = 'DEBUG'
-DEBUG = True
+LOGLEVEL = 'INFO'
+DEBUG = False
 LOGFILE = "logfile.log"
