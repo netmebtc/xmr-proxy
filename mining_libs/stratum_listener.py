@@ -60,6 +60,15 @@ class MiningSubscription(Subscription):
         if cls.subscribers.has_key(user_id):
             subscr = cls.subscribers[user_id]
             subscr.emit_single({'job_id':job_id, 'blob':blob, 'target':target})
+             
+    @classmethod
+    def on_template_all(cls, job_id, blob, target):
+      for subs in cls.subscribers:
+         try:
+            subscr = cls.subscribers[subs]
+            subscr.emit_single({'job_id':job_id, 'blob':blob, 'target':target})
+         except Exception:
+            pass
         
     def _finish_after_subscribe(self, result):
         '''Send new job to newly subscribed client'''
