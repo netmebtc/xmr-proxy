@@ -1,7 +1,7 @@
 
 # Ports for your workers
 STRATUM_HOST = "0.0.0.0"
-STRATUM_PORT = 8080
+STRATUM_PORT = 5555
 
 # Coin address where money goes. If you mine direct to the exchange, you MUST specify payment_id together with wallet of exchange.
 WALLET = '42JzYcuSB8tUThjTEc7a89bbYWtZXa7EwhPWcfUV1WTYEPYDMNACSjNJZPaRimBh1GcxPKxeG9Na5GAc7xygPUNXEFSpLhS'
