@@ -41,9 +41,9 @@ class ClientMiningService(GenericEventHandler):
         
         if method == 'job':
             '''Proxy just received information about new mining job'''
-            
+            if 'id' in params:
             (blob, job_id, target, user_id) = params["blob"],params["job_id"],params["target"],params["id"]
-        
+         
             # Broadcast to Stratum client
             stratum_listener.MiningSubscription.on_template(job_id, blob, target, user_id)
             
@@ -53,7 +53,13 @@ class ClientMiningService(GenericEventHandler):
 
             self.job_registry.add_job(job, True)
             
+            else:
+            (blob, job_id, target) = params["blob"],params["job_id"],params["target"]
+            stratum_listener.MiningSubscription.on_template_all(job_id, blob, target)
+            job = Job.build_from_pool(job_id, blob, target)
+            log.info("New job %s for all" % (job_id))
+
+            self.job_registry.add_job(job, True)
         else:
             '''Pool just asked us for something which we don't support...'''
             log.error("Unhandled method %s with params %s" % (method, params))
-
