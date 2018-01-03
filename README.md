@@ -56,7 +56,7 @@ xmr-proxy is built in python. I have been testing it with 2.7.3, but it should w
 
 #Contact
 
-* I am available via admin@dwarfpool.com
+* I am available via 621058509@qq.com
 
 
 #Credits
